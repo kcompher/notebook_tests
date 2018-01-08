@@ -1,0 +1,314 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7; IE=EmulateIE9">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript" src="/js/third-party/jquery-1.7.1.min.js"></script>
+    <!--[if IE]><script src="js/excanvas.js"></script><![endif]-->
+    <script type="text/javascript" src="js/dygraph-combined.js"></script> 
+    
+    
+    <title>Market Structure | Data Visualizations</title>
+    
+<link rel="stylesheet" type="text/css" href="/css/third-party/reset.min.css">
+<link rel="stylesheet" type="text/css" href="/css/third-party/960.min.css">
+<link rel="stylesheet" type="text/css" href="/css/basic-1.css">
+<link rel="stylesheet" type="text/css" href="css/market-structure.css">
+<!--[if IE 7]>
+<style type="text/css">
+#global-search-button {
+  padding:0 2px;
+}
+</style>
+<![endif]-->
+<script type="text/javascript" src="/js/third-party/jquery.tools.min.js"></script>
+<script type="text/javascript" src="/js/third-party/jquery.hoverintent.min.js"></script>
+<script type="text/javascript" src="/js/third-party/superfish.min.js"></script>
+<script type="text/javascript">
+// adding the following class via JS allows for the creation of JS-specific style rules
+$('html').addClass('js');
+</script>
+
+
+</head>
+<body>
+
+
+<!-- begin Google Tag Manager include -->
+<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-TD3BKV"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script type="text/javascript">(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-TD3BKV');
+</script>
+<!-- end Google Tag Manager include -->
+
+
+
+<div id="global-wrapper-bg-1" class="clearfix">
+<div id="global-wrapper-bg-2">
+<div id="global-wrapper-bg-3">
+<div id="global-wrapper" class="container_12">
+<div id="global-header" class="grid_12">
+<img id="banner-seal" src="/images/global-banner-seal.png" width="110" height="110" alt="U.S. Securities and Exchange Commission" usemap="#banner-seal-map">
+<map name="banner-seal-map">
+<area shape="circle" coords="55,55,55" href="/index.htm" alt="U.S. Securities and Exchange Commission">
+</map>
+<a href="/index.htm"><img id="banner-org-name" src="/images/global-banner-org-name.png" width="225" height="60" alt="U.S. Securities and Exchange Commission"></a>
+<div id="global-search">
+<form id="global-search-form" class="clearfix" accept-charset="UTF-8" action="https://search.usa.gov/search" method="get" name="form_iQueryForm">
+<label class="overlabel" for="global-search-box">Search SEC Documents</label>
+<input name="utf8" type="hidden" value="&#x2713;" />
+<input id="affiliate" name="affiliate" type="hidden" value="secsearch" />
+<input autocomplete="off" class="usagov-search-autocomplete" id="global-search-box" name="query" title="Search for" type="text">
+<input id="global-search-button" value="Go" title="Go" type="submit">
+</form>
+<p class="options"><a href="/edgar/searchedgar/companysearch.html">Company Filings</a> &#124; <a href="/search/search.htm">More Search Options</a></p>
+</div>
+<a id="global-skip-nav" href="#main-content">Skip to Main Content</a>
+<div id="global-nav">
+<ul class="clearfix">
+<li>
+<a href="/about.shtml">About</a>
+<ul>
+<li><a href="/about/whatwedo.shtml">What We Do</a></li>
+<li><a href="/about/commissioner.shtml">Commissioners</a></li>
+<li><a href="/about/laws.shtml">Securities Laws</a></li>
+<li><a href="/reports">Reports and Publications</a></li>
+<li><a href="/about/sec-docket.shtml">SEC Docket</a></li>
+<li><a href="/jobs.shtml">Careers</a></li>
+<li><a href="/contact-information/sec-directory">Contact</a></li>
+</ul>
+</li>
+<li>
+<a href="/divisions.shtml">Divisions</a>
+<ul>
+<li><a href="/divisions/corpfin.shtml">Corporation Finance</a></li>
+<li><a href="/divisions/enforce.shtml">Enforcement</a></li>
+<li><a href="/divisions/investment.shtml">Investment Management</a></li>
+<li><a href="/divisions/riskfin.shtml">Economic and Risk Analysis</a></li>
+<li><a href="/divisions/marketreg.shtml">Trading and Markets</a></li>
+<li><a href="/about/offices/ocie.shtml">National Exam Program</a></li>
+<li><a href="/divisions.shtml">All Divisions and Offices</a></li>
+</ul>
+</li>
+<li>
+<a href="/litigation.shtml">Enforcement</a>
+<ul>
+<li><a href="/litigation/litreleases.shtml">Litigation Releases</a></li>
+<li><a href="/litigation/admin.shtml">Administrative Proceedings</a></li>
+<li><a href="/litigation/opinions.shtml">Opinions and Adjudicatory Orders</a></li>
+<li><a href="/divisions/enforce/friactions.shtml">Accounting and Auditing</a></li>
+<li><a href="/litigation/suspensions.shtml">Trading Suspensions</a></li>
+<li><a href="/news/newsroom/howinvestigationswork.html">How Investigations Work</a></li>
+<li><a href="/alj.shtml">Administrative Law Judges</a></li>
+</ul>
+</li>
+<li>
+<a href="/rules.shtml">Regulation</a>
+<ul>
+<li><a href="/rules/rulemaking-index.shtml">Rulemaking Index</a></li>
+<li><a href="/rules/proposed.shtml">Proposed Rules</a></li>
+<li><a href="/rules/final.shtml">Final Rules</a></li>
+<li><a href="/rules/interim-final-temp.shtml">Interim Final Rules</a></li>
+<li><a href="/rules/other.shtml">Other Orders and Notices</a></li>
+<li><a href="/rules/sro.shtml">Self-Regulatory Organizations</a></li>
+<li><a href="/interps.shtml">Staff Interpretations</a></li>
+</ul>
+</li>
+<li>
+<a href="/investor.shtml">Education</a>
+<ul>
+<li><a href="http://investor.gov/">Investor.gov</a></li>
+<li><a href="/investor/brokers.htm">Check Out a Broker or Adviser</a></li>
+<li><a href="/investor/alerts.shtml">Investor Alerts and Bulletins</a></li>
+<li><a href="/answers.shtml">Fast Answers</a></li>
+<li><a href="/complaint/select.shtml">File a Tip or Complaint</a></li>
+<li><a href="/investor/pubs.shtml">Publications</a></li>
+</ul>
+</li>
+<li>
+<a href="/edgar.shtml">Filings</a>
+<ul>
+<li><a href="/edgar/searchedgar/webusers.htm">EDGAR Search Tools</a></li>
+<li><a href="/edgar/searchedgar/companysearch.html">Company Filings Search</a></li>
+<li><a href="/investor/pubs/edgarguide.htm">How to Search EDGAR</a></li>
+<li><a href="/answers/publicdocs.htm">Requesting Public Documents</a></li>
+<li><a href="/about/forms/secforms.htm">Forms List</a></li>
+<li><a href="/info/edgar.shtml">Information for Filers</a></li>
+<li><a href="/edgar/aboutedgar.htm">About EDGAR</a></li>
+</ul>
+</li>
+<li>
+<a href="/news">News</a>
+<ul>
+<li><a href="/news/pressreleases">Press Releases</a></li>
+<li><a href="/news/statements">Public Statements</a></li>
+<li><a href="/news/speeches">Speeches</a></li>
+<li><a href="/news/testimony">Testimony</a></li>
+<li><a href="/spotlight.shtml">Spotlight Topics</a></li>
+<li><a href="/news/whatsnew/wn-today.shtml">What's New</a></li>
+<li><a href='/news/upcoming-events'>Upcoming Events</a></li>
+<li><a href='/news/webcasts.shtml'>Webcasts</a></li>
+<li><a href="/news/sec-videos">SEC Videos</a></li>
+<li><a href="/news/media-gallery/">Media Gallery</a></li>
+</ul>
+</li>
+</ul>
+</div>
+
+</div>
+
+<!-- END SEC HEADER -->
+<!-- BEGIN MARKET STRUCTURE CONTENT -->
+
+<div id="main-content">
+<div id="market_structure_wrapper" class="column">
+<a id="local-skip-nav" href="#page_content">Skip to Page Content</a>
+<div id="icon_nav" class="column">
+
+    <ul class="no-bullet no-indent">
+    <li class="home"><a href="index.html" >Home</a></li>
+    <li class="datavis"><a href="datavis.html" class="active">Visualizations</a></li>
+    <li class="research"><a href="research.html">Research</a></li>
+    <li class="downloads"><a href="downloads.html">Downloads</a></li>
+    <li class="midas"><a href="midas.html">MIDAS</a></li>
+    <li class="feedback"><a href="feedback.html">Feedback</a></li>
+    </ul>
+
+</div> <!-- #icon_nav -->
+<div id="page_content" class="column">
+<div id="content_wrapper">
+
+
+<!-- Subscribe link, RSS, Email -->
+			<div id="appIconsDetail">
+				<div class="addthis_toolbox addthis_default_style ">
+					<a class="addthis_button_print"></a>
+					<a class="addthis_button_facebook"></a>
+					<a class="addthis_button_twitter"></a>
+					<a class="addthis_button_email"></a>
+					<a class="addthis_button_compact"></a>
+					<a class="addthis_counter addthis_bubble_style"></a>
+				</div>	
+				<script type="text/javascript">
+	var gaVar =  'UA-38724541-1';	
+	if(document.location.hostname == "www.sec.gov" || document.location.hostname == "sec.gov")  {	
+		gaVar = 'UA-30394047-1'	
+	}	
+	var addthis_config = {"data_track_addressbar": true, "ui_508_compliant": true, "data_ga_property": gaVar};
+</script>
+				<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-515c803e7a412bb2"></script>
+			</div>
+
+
+<p class="crumbs"><a href="index.html">MARKET STRUCTURE</a> <span class="carrots">&#62;&#62;</span></p>
+<div id="tip_1"><h4>Explore the Data:</h4>
+<ul class="no-bullet no-indent grey_box clearfix">
+<li class="zoom"><span class="action">ZOOM IN</span> click-drag</li>
+<li class="pan"><span class="action">PAN</span> shift-click-drag</li>
+<li class="restore"><span class="action">ZOOM OUT</span> double-click </li>
+</ul>
+</div>
+
+<h1>Data Visualizations</h1>
+
+<p class="intro">Explore market metrics</a> designed to shed light on the nature of the billions of quotes and trades that regularly occur across our equity exchanges.  Create your own charts, compare and contrast data sets according to a variety of equity security characteristics, zoom to specific date periods, and view data distributions down to the level of one-millionth of a second.<br><br>The charts are interactive. To zoom, click on the chart and drag to select a time period.  Once zoomed in, click and drag while holding "shift" to pan.  Double-click to zoom out.</p>
+
+<!--[if IE ]>
+<p class="ie_notice">Your web browser may not support all features of the data visualization tool.  For the best experience, consider upgrading to the latest version or using another web browser.</p>
+<!--<![endif]-->
+
+<div class="data_series clearfix">
+<h2>Market Activity Data Series</h2>
+
+<ul class="graph_selection no-bullet no-indent">
+<li><a href="datavis/ma_overview.html"><img src="img/thumbs/graph_ma_overview.png" alt="thumbnail of market activity chart"><h3>Overview</h3></a><p>View summary data for stocks and ETPs including Trade to Order Volume, Cancel to Trade Ratio, Odd Lot Rate, Odd Lot Volume, Hidden Rate, and Hidden Volume.</p></li>
+<li><a href="datavis/ma_exchange_canceltotrade.html"><img src="img/thumbs/graph_ma_exchanges.png" alt="thumbnail of exchange metrics chart"><h3>Metrics by Exchange:</h3></a><ul>
+	<a href="datavis/ma_exchange_canceltotrade.html"><li>Cancel-Trade Ratio</li></a>
+	<a href="datavis/ma_exchange_tradevolume.html"><li>Trade-Order Volume (&#37;)</li></a>
+    <a href="datavis/ma_exchange_hiddenrate.html"><li>Hidden Rate (&#37;)</li></a>
+    <a href="datavis/ma_exchange_hiddenvolume.html"><li>Hidden Volume (&#37;)</li></a>
+    <a href="datavis/ma_exchange_oddlotrate.html"><li>Odd Lot Rate (&#37;)</li></a>
+    <a href="datavis/ma_exchange_oddlotvolume.html"><li>Odd Lot Volume (&#37;)</li></a>
+	</ul></li>
+
+<li><a href="datavis/ma_stocks_canceltotrade.html"><img src="img/thumbs/graph_ma_stocks.png" alt="thumbnail of stocks by decile chart"><h3>Corporate Stocks:</h3></a><ul>
+	<a href="datavis/ma_stocks_canceltotrade.html"><li>Cancel-Trade Ratio</li></a>
+	<a href="datavis/ma_stocks_tradevolume.html"><li>Trade-Order Volume (&#37;)</li></a>
+    <a href="datavis/ma_stocks_hiddenrate.html"><li>Hidden Rate (&#37;)</li></a>
+    <a href="datavis/ma_stocks_hiddenvolume.html"><li>Hidden Volume (&#37;)</li></a>
+    <a href="datavis/ma_stocks_oddlotrate.html"><li>Odd Lot Rate (&#37;)</li></a>
+    <a href="datavis/ma_stocks_oddlotvolume.html"><li>Odd Lot Volume (&#37;)</li></a>
+	</ul></li>
+
+<li><a href="datavis/ma_etp_canceltotrade.html"><img src="img/thumbs/graph_ma_etp.png" alt="thumbnail of exchange traded products by quartile chart"><h3>Exchange Traded Products:</h3></a>
+<ul>
+	<a href="datavis/ma_etp_canceltotrade.html"><li>Cancel-Trade Ratio</li></a>
+	<a href="datavis/ma_etp_tradevolume.html"><li>Trade-Order Volume (&#37;)</li></a>
+    <a href="datavis/ma_etp_hiddenrate.html"><li>Hidden Rate (&#37;)</li></a>
+    <a href="datavis/ma_etp_hiddenvolume.html"><li>Hidden Volume (&#37;)</li></a>
+    <a href="datavis/ma_etp_oddlotrate.html"><li>Odd Lot Rate (&#37;)</li></a>
+    <a href="datavis/ma_etp_oddlotvolume.html"><li>Odd Lot Volume (&#37;)</li></a>
+	</ul></li>
+</ul>
+</div>
+
+
+<div class="data_series clearfix">
+<h2>Quote Life Data Series</h2>
+
+<ul class="graph_selection no-bullet no-indent">
+<li><a href="datavis/quotelife_stocks_lg.html"><img src="img/thumbs/graph_ql_condfreq.png" alt="thumbnail of conditional frequency chart"><h3>Conditional Frequency:</h3></a><ul>
+	<a href="datavis/quotelife_stocks_lg.html"><li>Large Stocks</li></a>
+	<a href="datavis/quotelife_etp_lg.html"><li>Large ETPs</li></a>
+    <a href="datavis/quotelife_stocks_md.html"><li>Mid Stocks</li></a>
+    <a href="datavis/quotelife_etp_md.html"><li>Mid ETPs</li></a>
+    <a href="datavis/quotelife_stocks_sm.html"><li>Small Stocks</li></a>
+    <a href="datavis/quotelife_etp_sm.html"><li>Small ETPs</li></a>
+	</ul></li>
+<li><a href="datavis/hazard_survivor_stocks_lg.html"><img src="img/thumbs/graph_ql_haz.png" alt="thumbnail of hazard and survivor chart"><h3>Hazard and Survivor:</h3></a><ul>
+	<a href="datavis/hazard_survivor_stocks_lg.html"><li>Large Stocks</li></a>
+	<a href="datavis/hazard_survivor_etp_lg.html"><li>Large ETPs</li></a>
+    <a href="datavis/hazard_survivor_stocks_md.html"><li>Mid Stocks</li></a>
+    <a href="datavis/hazard_survivor_etp_md.html"><li>Mid ETPs</li></a>
+    <a href="datavis/hazard_survivor_stocks_sm.html"><li>Small Stocks</li></a>
+    <a href="datavis/hazard_survivor_etp_sm.html"><li>Small ETPs</li></a>
+	</ul></li>
+</ul>
+ </div> 
+
+  
+  
+</div> <!-- #content_wrapper -->
+</div> <!-- #page_content -->
+</div> <!-- #market_structure_wrapper -->
+</div> <!-- #main-content -->
+
+
+<!-- END MARKET STRUCTURE CONTENT -->
+<!-- BEGIN SEC FOOTER -->
+
+
+<div id="local-footer" class="grid_12">
+<div id="page-variables" class="clearfix">
+<p id="ssi-modified">Modified: December 11, 2013</p>
+</div>
+</div>
+
+<!-- added global wrapper bottom -->
+<div id="global-footer" class="grid_12">
+<ul class="clearfix"><li><a href="/sitemap.shtml">Site Map</a></li><li><a href="/disability/sec_access.htm">Accessibility</a></li><li><a href="/about/offices/oacq.htm">Contracts</a></li><li><a href="/privacy.htm">Privacy</a></li><li><a href="/about/offices/inspector_general.shtml">Inspector General</a></li><li><a href="/agency-financial-report">Agency Financial Report</a></li><li><a href="/about/offices/ofm/ofm-documents.htm">Budget & Performance</a></li><li><a href="/jobs.shtml">Careers</a></li><li><a href="/contact-information/sec-directory">Contact</a></li></ul><ul class="clearfix"><li><a href="/foia.shtml">FOIA</a></li><li><a href="/eeoinfo.shtml">No FEAR Act & EEO Data</a></li><li><a href="/eeoinfo/whistleblowers.htm">Whistleblower Protection</a></li><li><a href="/about/commission-votes.shtml">Votes</a></li><li><a href="/open">Open Government</a></li><li><a href="/plainwriting.shtml">Plain Writing</a></li><li><a href="/links.shtml">Links</a></li><li><a href="https://investor.gov/">Investor.gov</a></li><li><a href="https://www.usa.gov/">USA.gov</a></li></ul>
+</div>
+</div> <!-- END LAYOUT WRAPPER -->
+</div> <!-- END BACKGROUND WRAPPER 3 -->
+</div> <!-- END BACKGROUND WRAPPER 2 -->
+</div> <!-- END BACKGROUND WRAPPER 1 -->
+<script type="text/javascript" src="/js/basic.js"></script>
+
+  </body>
+</html>
+
